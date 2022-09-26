@@ -1,13 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <title>Document</title>
-</head>
-<body>
-    <h1>Welcome home bootstrap</h1>
-</body>
+    <style>
+      body {
+        font-family: "Gotham";
+      }
+      .banner-image {
+        background-size: cover;
+        overflow: hidden;
+        background: linear-gradient(
+            rgba(29, 38, 113, 0.8),
+            rgba(233, 233, 233, 0.8)
+          ),
+          url("img/house-cover.jpg") no-repeat center center fixed;
+      }
+      header {
+        background: black;
+        overflow: hidden;
+      }
+      .bg-nav {
+        background-color: #1a3668;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar  -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <div class="logo-image text-center ml-4">
+            <img src="img/logo.png" class="rounded" style="width: 250px" />
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner Image  -->
+    <div class="banner-image w-100 vh-100 d-flex flex-row-reverse align-items-center">
+      <div class="content mr-5">
+        <div class="jumbotron-fluid ">
+              <h1 class="text-white display-4 ml-5">America's best real estate agent</h1>
+              <p class="text-white lead ml-5">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="container my-5 d-grid gap-5">
+      <div class="p-5 border">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
+          natus iusto fugit id saepe neque rerum magni laudantium accusantium
+          dolorem numquam quasi.
+        </p>
+      </div>
+      <div class="p-5 border">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
+          natus iusto fugit id saepe neque rerum magni laudantium accusantium
+          dolorem numquam quasi.
+        </p>
+      </div>
+      <div class="p-5 border">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
+          natus iusto fugit id saepe neque rerum magni laudantium accusantium
+          dolorem numquam quasi.
+        </p>
+      </div>
+      <div class="p-5 border">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
+          natus iusto fugit id saepe neque rerum magni laudantium accusantium
+          dolorem numquam quasi.
+        </p>
+      </div>
+      <div class="p-5 border">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
+          natus iusto fugit id saepe neque rerum magni laudantium accusantium
+          dolorem numquam quasi. df
+        </p>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+      var nav = document.querySelector("nav");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 100) {
+          nav.classList.add("bg-nav", "shadow");
+        } else {
+          nav.classList.remove("bg-nav", "shadow");
+        }
+      });
+    </script>
+  </body>
 </html>
