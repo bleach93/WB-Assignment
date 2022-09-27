@@ -1,147 +1,714 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <script src="https://kit.fontawesome.com/30ae09b9b7.js" crossorigin="anonymous"></script>
+    <title>WB | Assigment</title>
     <style>
-      body {
-        font-family: "Gotham";
-      }
-      .banner-image {
-        background-size: cover;
-        overflow: hidden;
-        background: linear-gradient(
-            rgba(29, 38, 113, 0.8),
-            rgba(233, 233, 233, 0.8)
-          ),
-          url("img/house-cover.jpg") no-repeat center center fixed;
-      }
-      header {
-        background: black;
-        overflow: hidden;
-      }
-      .bg-nav {
-        background-color: #1a3668;
-      }
+        body {
+            font-family: Montserrat;
+        }
+        
+        .banner-image {
+            background-size: cover;
+            overflow: hidden;
+            background: linear-gradient( rgba(29, 38, 113, 0.8), rgba(56, 56, 56, 0.8)), url("img/house-cover.jpg") no-repeat center center fixed;
+        }
+        
+        header {
+            background: black;
+            overflow: hidden;
+        }
+        
+        .bg-nav {
+            background-color: #1a3668;
+        }
+        
+        .div-image {
+            background-size: cover;
+            overflow: hidden;
+            background: linear-gradient( rgba(255, 255, 255, 0.8), rgba(253, 253, 253, 0.8)), url("img/house-div.jpg") no-repeat center center fixed;
+        }
+        
+        .button-57 {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #18181a;
+            color: #18181a;
+            display: inline-block;
+            font-size: 16px;
+            line-height: 15px;
+            padding: 18px 18px 17px;
+            text-decoration: none;
+            cursor: pointer;
+            background: #fff;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        
+        .button-57 span:first-child {
+            position: relative;
+            transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+            z-index: 10;
+        }
+        
+        .button-57 span:last-child {
+            color: white;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+            z-index: 100;
+            opacity: 0;
+            top: 50%;
+            left: 50%;
+            transform: translateY(225%) translateX(-50%);
+            height: 14px;
+            line-height: 13px;
+        }
+        
+        .button-57:after {
+            content: "";
+            position: absolute;
+            bottom: -50%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            transform-origin: bottom center;
+            transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+            transform: skewY(9.3deg) scaleY(0);
+            z-index: 50;
+        }
+        
+        .button-57:hover:after {
+            transform-origin: bottom center;
+            transform: skewY(9.3deg) scaleY(2);
+        }
+        
+        .button-57:hover span:last-child {
+            transform: translateX(-50%) translateY(-100%);
+            opacity: 1;
+            transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+        }
+        
+        .contenedor {
+            width: 100%;
+            height: 400px;
+            display: block;
+            position: relative;
+            background-position: center;
+            overflow: hidden;
+            transition: all 0.9s;
+        }
+        
+        .contenedor:before {
+            position: absolute;
+            content: "";
+            top: 2em;
+            left: 3em;
+            width: 0;
+            height: 2px;
+            background-color: #000;
+            transition: all 0.9s;
+        }
+        
+        .contenedor:after {
+            position: absolute;
+            content: "";
+            bottom: 2em;
+            right: 3em;
+            width: 0;
+            height: 2px;
+            background-color: #000;
+            transition: all 0.9s;
+        }
+        
+        .contenedor h3 {
+            position: absolute;
+            top: 4em;
+            transform: translatex(-130%);
+            transition: all 0.9s;
+        }
+        
+        .contenedor p {
+            position: absolute;
+            left: 2em;
+            top: 4em;
+            transform: translatex(350%);
+            transition: all 0.9s;
+        }
+        
+        .contenedor:hover {
+            background-size: 120% 120%;
+            cursor: pointer;
+        }
+        
+        .contenedor:hover h3,
+        .contenedor:hover p {
+            transform: translatex(0%);
+        }
+        
+        .contenedor:hover:before,
+        .contenedor:hover:after {
+            width: 80%;
+        }
+        
+        .nombre {
+            text-align: center;
+            width: 100%;
+            font-family: sans-serif;
+            font-size: 2rem;
+        }
+        
+        a {
+            color: #6c757d;
+        }
+        
+        a:hover {
+            color: #fec503;
+            text-decoration: none;
+        }
+        
+         ::selection {
+            background: #fec503;
+            text-shadow: none;
+        }
+        
+        footer {
+            padding: 2rem 0;
+            background-color: #1a3668;
+        }
+        
+        .footer-column:not(:first-child) {
+            padding-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-column:not(:first-child) {
+                padding-top: 0rem;
+            }
+        }
+        
+        .footer-column {
+            text-align: center;
+        }
+        
+        .footer-column .nav-item .nav-link {
+            padding: 0.1rem 0;
+        }
+        
+        .footer-column .nav-item span.nav-link {
+            color: #6c757d;
+        }
+        
+        .footer-column .nav-item span.footer-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        
+        .footer-column .nav-item .fas {
+            margin-right: 0.5rem;
+        }
+        
+        .footer-column ul {
+            display: inline-block;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-column ul {
+                text-align: left;
+            }
+        }
+        
+        ul.social-buttons {
+            margin-bottom: 0;
+        }
+        
+        ul.social-buttons li a:active,
+        ul.social-buttons li a:focus,
+        ul.social-buttons li a:hover {
+            background-color: #fec503;
+        }
+        
+        ul.social-buttons li a {
+            font-size: 20px;
+            line-height: 40px;
+            display: block;
+            width: 40px;
+            height: 40px;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            color: #fff;
+            border-radius: 100%;
+            outline: 0;
+            background-color: #1a1d20;
+        }
+        
+        footer .quick-links {
+            font-size: 90%;
+            line-height: 40px;
+            margin-bottom: 0;
+            text-transform: none;
+            font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+        
+        .copyright {
+            color: white;
+        }
+        
+        .fa-ellipsis-h {
+            color: white;
+            padding: 2rem 0;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Navbar  -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <div class="logo-image text-center ml-4">
-            <img src="img/logo.png" class="rounded" style="width: 250px" />
-          </div>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="logo-image text-center ml-4">
+                    <img src="img/logo.png" class="rounded" style="width: 250px" />
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="mx-auto"></div>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="#">Contact</a>
-            </li>
-          </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="mx-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#whyus">Why us?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#meet">Meet Gatien</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- Banner Image  -->
-    <div class="banner-image w-100 vh-100 d-flex flex-row-reverse align-items-center">
-      <div class="content mr-5">
-        <div class="jumbotron-fluid ">
-              <h1 class="text-white display-4 ml-5">America's best real estate agent</h1>
-              <p class="text-white lead ml-5">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center">
+        <div class="content text-center">
+            <h1 class="text-white" style="
+            font-family: Montserrat;
+            letter-spacing: 0.7px;
+            line-height: 1.5;
+            font-size: 45px;
+          ">
+                The Benefits of Working with a Luxury Presence Agent.
+            </h1>
+            <div class="mt-4">
+                <button class="button-57" role="button">
+            <span class="text">Know more</span><span>About us</span>
+          </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us -->
+    <section id="whyus">
+        <div class="div-image">
+            <div class="d-flex justify-content-center align-items-center mt-5 mb-3">
+                <div class="content text-center ml-5 mr-5">
+                    <h1 style="
+                letter-spacing: 1px;
+                line-height: 1.5;
+                font-size: 30px;
+                color: #1a3668;
+              ">
+                        Why you should hire an agent who has partnered with a luxury real estate marketing company?
+                    </h1>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-justify mt-3 mb-5">
+                <div class="content text-center ml-5 mr-5">
+                    <h1 style="
+                letter-spacing: 0.95px;
+                line-height: 1.4;
+                padding: 0 0 1em 0;
+                font-weight: 400;
+                font-size: 20px;
+                color: #1a3668;
+              ">
+                        One of the biggest perks of working with a real estate agent is their ability to market your property to the right target audience. A professional agent with the right experience will be able to identify who will be interested in your property and implement
+                        effective strategies to reach them via their website, paid advertising, social media, and other means. When you work with an agent who has partnered with Luxury Presence, you benefit from the many different types of marketing capabilities
+                        the company offers. Here is how:
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <div class="container d-flex justify-content-center align-items-center mt-3">
+        <div class="row col-12">
+            <div class="p-5 border col-12 col-lg-6">
+                <div class="contenedor" style="
+              background: linear-gradient(
+                  rgba(255, 255, 255, 0.8),
+                  rgba(105, 104, 104, 0.8)
+                ),
+                url(img/paid-advertising.jpg);
+            ">
+                    <h3 class="text-center">
+                        To reach your potential buyers,<u>you have to know who they are</u
+              >, where they spend their time online, and how they make their
+              buying decisions.
+            </h3>
+          </div>
+        </div>
+        <div class="p-5 border col-12 col-lg-6">
+          <h2 class="text-center" style="color: #1a3668">
+            Paid Advertising on All Channels
+          </h2>
+          <p
+            class="mt-3"
+            style="
+              color: #1a3668;
+              padding: 0 0 1em 0;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 1.8;
+              text-align: justify;
+            "
+          >
+            Agents who use luxury real estate marketing services are able to
+            identify your niche market, then create paid ads on Facebook,
+            Google, Instagram, and YouTube that reach those interested in your
+            property. These paid ad campaigns are highly customized and
+            targeted, ensuring you are not spending money marketing to those who
+            are not in the market for a property such as yours.
+          </p>
         </div>
       </div>
     </div>
-
-    <!-- Main Content Area -->
-    <div class="container my-5 d-grid gap-5">
-      <div class="p-5 border">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
-          natus iusto fugit id saepe neque rerum magni laudantium accusantium
-          dolorem numquam quasi.
-        </p>
-      </div>
-      <div class="p-5 border">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
-          natus iusto fugit id saepe neque rerum magni laudantium accusantium
-          dolorem numquam quasi.
-        </p>
-      </div>
-      <div class="p-5 border">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
-          natus iusto fugit id saepe neque rerum magni laudantium accusantium
-          dolorem numquam quasi.
-        </p>
-      </div>
-      <div class="p-5 border">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
-          natus iusto fugit id saepe neque rerum magni laudantium accusantium
-          dolorem numquam quasi.
-        </p>
-      </div>
-      <div class="p-5 border">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus veniam ipsa earum quibusdam, atque ipsum error maiores
-          natus iusto fugit id saepe neque rerum magni laudantium accusantium
-          dolorem numquam quasi. df
-        </p>
+    <div
+      class="container d-flex justify-content-center align-items-center mt-3"
+    >
+      <div class="row col-12">
+        <div class="p-5 border col-12 col-lg-6">
+          <h2 class="text-center" style="color: #1a3668">
+            Expert Content Production
+          </h2>
+          <p
+            class="mt-3"
+            style="
+              color: #1a3668;
+              padding: 0 0 1em 0;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 1.8;
+              text-align: justify;
+            "
+          >
+            <i
+              >Content is one of the most powerful resources a real estate agent
+              has to promote your property.</i
+            >
+            Being able to create high-quality content such as video and
+            copywriting is an essential tool that elevates the agents who use
+            luxury real estate marketing services above their competitors. An
+            agent who uses video is able to connect with potential buyers on a
+            deeper level and build trust and rapport. When they use video to
+            market your property, they are showing viewers what it would really
+            be like to walk through and live in your home—something that is much
+            more difficult to do with a written description. However, written
+            descriptions—or copywriting—is also important. Your property needs
+            to be described in appealing and vibrant terms on the listing and on
+            any additional marketing that is created to sell it. Those agents
+            who work with Luxury Presence get access to experienced real estate
+            copywriters who create blogs, website copy, and content marketing
+            pieces that make your property attractive to potential buyers.
+          </p>
+        </div>
+        <div class="p-5 border col-12 col-lg-6">
+          <div
+            class="contenedor"
+            style="
+              background: linear-gradient(
+                  rgba(255, 255, 255, 0.8),
+                  rgba(146, 31, 31, 0.8)
+                ),
+                url(img/content-production.jpg);
+            "
+          >
+            <h3 class="text-center">
+              According to a recent survey,
+              <u
+                >85 percent of buyers and sellers want to work with an agent who
+                uses video.</u
+              >
+            </h3>
+          </div>
+        </div>
       </div>
     </div>
+    <div
+      class="container d-flex justify-content-center align-items-center mt-3"
+    >
+      <div class="row col-12">
+        <div class="p-5 border col-12 col-lg-6">
+          <div
+            class="contenedor"
+            style="
+              background: linear-gradient(
+                  rgba(255, 255, 255, 0.7),
+                  rgba(26, 54, 104, 0.9)
+                ),
+                url(img/seo.jpg);
+            "
+          >
+            <h3 class="text-center">
+              Recent research has shown that
+              <u
+                >44% of buyers found the home they purchased on the internet.</u
+              >
+            </h3>
+          </div>
+        </div>
+        <div class="p-5 border col-12 col-lg-6">
+          <h2 class="text-center" style="color: #1a3668">
+            Effective Search Engine Optimization
+          </h2>
+          <p
+            class="mt-3"
+            style="
+              color: #1a3668;
+              padding: 0 0 1em 0;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 1.8;
+              text-align: justify;
+            "
+          >
+            Many costumers simply googled the search terms that they wanted in a
+            new home and started their search that way. For your home to show up
+            in these types of searches, your real estate agent needs to use the
+            right terms in your online marketing. The effective use of these
+            terms is referred to as search engine optimization or SEO. The
+            process of identifying and correctly using the right terms is a bit
+            of a science—one that the SEO experts at Luxury Presence have
+            mastered. When a potential buyer searches terms that match your
+            home, your property will show up in the results and provide
+            opportunities for the buyer to learn more.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="container d-flex justify-content-center align-items-center mt-3"
+    >
+      <div class="row col-12">
+        <div class="p-5 border col-12 col-lg-6">
+          <h2 class="text-center" style="color: #1a3668">
+            Social Media Marketing
+          </h2>
+          <p
+            class="mt-3"
+            style="
+              color: #1a3668;
+              padding: 0 0 1em 0;
+              font-weight: 400;
+              font-size: 18px;
+              line-height: 1.8;
+              text-align: justify;
+            "
+          >
+            If your real estate agent is an influencer on social media, he or
+            she has access to thousands of niche buyers who are ready to invest
+            in property. To be an influencer, an agent either needs to dedicate
+            a large chunk of their time to social media or they need to partner
+            with luxury real estate marketing service providers who can put in
+            the work for them. Wouldn’t you rather your agent spent his or her
+            time marketing your property and let an expert handle their social
+            media presence? At <u>Luxury Presence,</u> our dedicated success team utilizes an agent’s stories and feed posts to help them go viral and become an authority in their industry. Once they’ve harnessed the power of becoming an influencer, they
+                        can use their voice to advocate for your home and sell it more quickly than their competitors.
+                        </p>
+                </div>
+                <div class="p-5 border col-12 col-lg-6">
+                    <div class="contenedor" style="
+              background: linear-gradient(
+                  rgba(26, 54, 104, 0.9),
+                  rgba(255, 255, 255, 0.7)
+                ),
+                url(img/socialmedia.jpg);
+            ">
+                        <h3 class="text-center">
+                            Our team is deeply committed to our customers
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="meet">
+            <div class="row col-12 mt-5">
+                <div class="col-12 col-lg-6">
+                    <div class="d-flex justify-content-center align-items-center mt-5 mb-3">
+                        <div class="content text-center ml-5">
+                            <img src="img/meet.png" height="420">
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 col-12 col-lg-4">
+                    <h2 class="text-center" style="color: #1a3668">
+                        Meet Gatien
+                    </h2>
+                    <p class="mt-3" style="
+                    color: #1a3668;
+                    padding: 0 0 1em 0;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 1.8;
+                    text-align: center;
+                  ">
+                        Gatien has an impressive track record of delivering exceptional results for every client he serves. He understands every facet of the real estate business and extends that experience and market knowledge to his clients, walking them through each stage
+                        of the process of buying or selling a home. Gatien’s approach to closing deals, coupled with his extensive network of international and domestic clients, from Los Angeles to Monaco, have enabled him rise to the top 1% of Realtors
+                        in a short period of time.
+                    </p>
+                </div>
+            </div>
+
+    </div>
+    </section>
+    <section id="contact">
+        <div class="mt-5" style="
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.7),
+              rgba(26, 54, 104, 0.9)
+          ),
+          url(img/contact.jpg);
+      ">
+            <div class="text-center">
+                <h2 class="text-primary">Need help?</h2>
+                <p class="lead mr-5 ml-5">Contact us! we will make sure to get in touch as soon as possible</p>
+            </div>
+            <div class=" d-flex align-items-center justify-content-center">
+                <div class="bg-white col-sm-12 col-md-6 rounded">
+                    <div class="p-4 rounded shadow-md">
+                        <div>
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" name="name" class="form-control" required style="border: none;border-bottom: 1px solid #030303;">
+                        </div>
+                        <div class="mt-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="text" name="email" class="form-control" required style="border: none;border-bottom: 1px solid #030303;">
+                        </div class="mt-3">
+                        <div class="mt-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" name="subject" class="form-control" required style="border: none;border-bottom: 1px solid #030303;">
+                        </div>
+                        <div class="mt-3 mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea name="message" cols="20" rows="6" class="form-control" placeholder="I want to contact you" style="border: 1px solid #030303;"></textarea>
+                        </div>
+                        <div class="mt-3 mb-3 row float-right mr-1">
+                            <button class="btn btn-primary">
+                            Submit Form
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 ml-5 footer-column">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <span class="footer-title">Contact & Support</span>
+                                </li>
+                                <li class="nav-item">
+                                    <span class="nav-link"><i class="fa fa-phone"></i> +(561) 414-3565</span>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa fa-map"></i> 1682 Jefferson Ave., #103 Miami Beach, Fl 33139</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa fa-envelope"></i> gatien.salaun@cbrealty.com</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa fa-clock"></i> Monday - Sunday, 9 AM - 7 PM</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row text-center">
+                        <div class="col-md-4 box">
+                            <span class="copyright quick-links">Copyright &copy;  <script>document.write(new Date().getFullYear())</script>
+                    </span>
+                        </div>
+                        <div class="col-md-4 box">
+                            <ul class="list-inline social-buttons">
+                                <li class="list-inline-item">
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </section>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript">
-      var nav = document.querySelector("nav");
+        var nav = document.querySelector("nav");
 
-      window.addEventListener("scroll", function () {
-        if (window.pageYOffset > 100) {
-          nav.classList.add("bg-nav", "shadow");
-        } else {
-          nav.classList.remove("bg-nav", "shadow");
-        }
-      });
+        window.addEventListener("scroll", function() {
+            if (window.pageYOffset > 100) {
+                nav.classList.add("bg-nav", "shadow");
+            } else {
+                nav.classList.remove("bg-nav", "shadow");
+            }
+        });
     </script>
-  </body>
+</body>
+
 </html>
